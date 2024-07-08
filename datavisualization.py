@@ -14,7 +14,7 @@ def visualise_image(selected_images):
     url_response = requests.get(url)
     with zipfile.ZipFile(BytesIO(url_response.content)) as z:
         z.extractall('.')
-    images = open_selected_images(os.path.join(os.getcwd(), "solar_object_detection.zip/test/images"), selected_images)
+    images = open_selected_images(os.path.join(os.getcwd(), "solar_object_detection/test/images"), selected_images)
     for i, image_path in enumerate(images):
         image = Image.open(image_path)
         image = image.convert('RGB')
