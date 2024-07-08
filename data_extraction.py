@@ -6,7 +6,7 @@ def extract_data():
     bucket_name = 'deeplearning-mlops-demo'
     url = s3.generate_presigned_url(
                     ClientMethod = 'get_object',
-                    Params = {'Bucket': bucket_name, 'Key': 'solar_soli_detection.zip'},
+                    Params = {'Bucket': bucket_name, 'Key': 'solar_object_detection.zip'},
                     ExpiresIn = 7200
                 )
     print(url)
