@@ -298,13 +298,13 @@ def transform_data():
 
     IMAGE_WIDTH = 640
     IMAGE_HEIGHT = 480
-    classes = ['Leaf', 'birds_dropping', 'birds_feather', 'clean', 'dust', 'dust_particles']
+    classes = ['faulty', 'no faulty']
     # Create datasets
-    train_dataset = CustomDataset(os.path.join(os.getcwd(),"solar_soli_detection/train/images/"), os.path.join(os.getcwd(),"solar_soli_detection/train/annotations/"), os.path.join(os.getcwd(),"solar_soli_detection/train/labels/"), "solar_soli_detection", IMAGE_WIDTH, IMAGE_HEIGHT, classes, get_train_transform())
+    train_dataset = CustomDataset(os.path.join(os.getcwd(),"solar_object_detection/train/images/"), os.path.join(os.getcwd(),"solar_object_detection/train/annotations/"), os.path.join(os.getcwd(),"solar_object_detection/train/labels/"), "solar_object_detection", IMAGE_WIDTH, IMAGE_HEIGHT, classes, get_train_transform())
     print("one-------------",train_dataset)
-    valid_dataset = CustomDataset(os.path.join(os.getcwd(),"solar_soli_detection/valid/images/"), os.path.join(os.getcwd(),"solar_soli_detection/valid/annotations/"), os.path.join(os.getcwd(),"solar_soli_detection/valid/labels/"), "solar_soli_detection", IMAGE_WIDTH, IMAGE_HEIGHT, classes, get_valid_transform())
+    valid_dataset = CustomDataset(os.path.join(os.getcwd(),"solar_object_detection/valid/images/"), os.path.join(os.getcwd(),"solar_object_detection/valid/annotations/"), os.path.join(os.getcwd(),"solar_object_detection/valid/labels/"), "solar_object_detection", IMAGE_WIDTH, IMAGE_HEIGHT, classes, get_valid_transform())
     print("-------------",valid_dataset)
-    test_dataset = CustomDataset(os.path.join(os.getcwd(),"solar_soli_detection/test/images/"), os.path.join(os.getcwd(),"solar_soli_detection/test/annotations/"), os.path.join(os.getcwd(),"solar_soli_detection/test/labels/"), "solar_soli_detection", IMAGE_WIDTH, IMAGE_HEIGHT, classes, get_test_transform())
+    test_dataset = CustomDataset(os.path.join(os.getcwd(),"solar_object_detection/test/images/"), os.path.join(os.getcwd(),"solar_object_detection/test/annotations/"), os.path.join(os.getcwd(),"solar_object_detection/test/labels/"), "solar_object_detection", IMAGE_WIDTH, IMAGE_HEIGHT, classes, get_test_transform())
     print("-------------",test_dataset)
     i, a = train_dataset[0]
     print("iiiiii:",i)
