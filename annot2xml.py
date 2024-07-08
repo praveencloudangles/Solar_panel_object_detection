@@ -4,12 +4,8 @@ import shutil
 
 # Dictionary mapping class numbers to class names
 class_names = {
-    0: 'Leaf',
-    1: 'birds_dropping',
-    2: 'birds_feather',
-    3: 'clean',
-    4: 'dust',
-    5: 'dust_particles'
+    0: 'faulty',
+    1: 'no faulty'
 }
 folder = ["train","valid","test"]
 cwd = os.getcwd()
@@ -20,8 +16,8 @@ cwd = os.getcwd()
 #annotations_folder = "/home/ubuntu/construction dataset/css-data/test/annotations/"
 for currfolder in folder:
     
-    labels_folder = os.path.join(cwd,f"solar_soli_detection/{currfolder}/labels/")
-    annotations_folder = os.path.join(cwd,f"solar_soli_detection/{currfolder}/annotations/")
+    labels_folder = os.path.join(cwd,f"solar_object_detection/{currfolder}/labels/")
+    annotations_folder = os.path.join(cwd,f"solar_object_detection/{currfolder}/annotations/")
 
     # Create annotations folder if it doesn't exist
     if not os.path.exists(annotations_folder):
