@@ -14,7 +14,7 @@ def visualise_image(selected_images):
     url_response = requests.get(url)
     with zipfile.ZipFile(BytesIO(url_response.content)) as z:
         z.extractall('.')
-    images = open_selected_images(os.path.join(os.getcwd(), "solar_soli_detection/test/images"), selected_images)
+    images = open_selected_images(os.path.join(os.getcwd(), "solar_object_detection.zip/test/images"), selected_images)
     for i, image_path in enumerate(images):
         image = Image.open(image_path)
         image = image.convert('RGB')
@@ -22,5 +22,5 @@ def visualise_image(selected_images):
     return url
 
 # Example usage
-selected_images = ['Imgdirty_131_1_jpg.rf.dc27e20f067e8c95c81fa7b1a9fad7ec.jpg', 'Imgdirty_151_1_jpg.rf.9c8391892e5473fd8b828c5e20e0f4f0.jpg', 'Imgclean_114_0_jpg.rf.1ad865a31d4dc5e3bde44d9891676df9.jpg', 'Imgclean_38_0_jpg.rf.1ac4c1cd38afbd15c2810ec18dfee9e3.jpg']  # Replace with your actual image names
+selected_images = ['9_JPG.rf.6b8a4049fd4b98a4bb2b58bb17dbba6f.jpg', '122v5_jpg.rf.1645735acb7c35f33a3acd2f27b0522c.jpg', '132v7_jpg.rf.8bdab9ef588c6164589e39c8aad4a0b6.jpg', '127_jpg.rf.3d447e2913076b4664c55d624ec85fc2.jpg']  # Replace with your actual image names
 visualise_image(selected_images)
